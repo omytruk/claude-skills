@@ -57,7 +57,7 @@ As Olena works through the notes, she might:
 - Example: "Let's make #3 a task to do by Friday"
 
 **B) Turn it into a project idea**
-- Add a new project to the Projects database
+- Use Work Structurer Skill to set up the project properly
 - Mark the note as Processed
 - Example: "That's actually a project idea - add it to my Projects"
 
@@ -156,3 +156,4 @@ Want to process these?"
 4. **Don't force processing** - if she's not ready, that's fine
 5. **Track completion** - update Processed status immediately when done
 6. **Keep it conversational** - this isn't a chore, it's organizing thoughts
+7. **Integrate with other skills** - use Problem Externalizer for overwhelming notes, Work Structurer for complex projects, Reminder Skill for tasks

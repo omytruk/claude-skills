@@ -16,7 +16,7 @@ Each skill is self-contained in its own directory with a `SKILL.md` file that de
 - Natural language parsing rules
 - Response patterns and confirmations
 
-### Three Core Skills
+### Five Core Skills
 
 1. **reminder-keeper** (reminder-skill/): Task creation with intelligent date/time parsing
    - Parses natural language for task creation ("remind me to...")
@@ -30,11 +30,26 @@ Each skill is self-contained in its own directory with a `SKILL.md` file that de
    - Deferred processing approach
    - Optional context tagging
 
-3. **note-processor** (note-processing-skill/): Review and organize brain dumps
+3. **note-processer** (note-processing-skill/): Review and organize brain dumps
    - Batch or selective note processing
    - Converts notes to tasks or projects
    - Marks processed items
    - Supports filtered views
+   - Integrates with other skills for complex processing
+
+4. **problem-externalizer** (problem-externalizer-skill/): Structured problem externalization
+   - Helps separate person from problem through interview process
+   - Reduces rumination and overwhelm via 5-phase structure
+   - Defines boundaries and actionable components
+   - Creates clear next steps from complex situations
+   - Integrates seamlessly with work-structurer and reminder-keeper
+
+5. **work-structurer** (work-structurer-skill/): Notion hierarchy setup and project structuring
+   - Creates proper Areas → Projects → Tasks hierarchy
+   - Helps discover project goals through guided questions
+   - Sets up full project structure efficiently
+   - Supports both quick setup and discovery mode
+   - Integrates with other skills for complete workflow
 
 ### Notion Integration
 
@@ -84,10 +99,50 @@ The system is specifically designed to work with ADHD thought patterns:
 2. Present numbered list for easy reference
 3. Support multiple outcomes per note:
    - Convert to task (use reminder-keeper skill)
-   - Convert to project
+   - Convert to project (use work-structurer skill)
    - Saved to external system (Obsidian)
    - Mark as done/no longer relevant
+   - Use problem-externalizer for overwhelming notes
 4. Update Processed = "__YES__" immediately when handled
+
+### Problem Externalization Workflow
+1. **Dump Phase**: Let user express everything without structure
+2. **Boundary Phase**: Define what IS and ISN'T the problem, create separation
+3. **Breakdown Phase**: Identify distinct components and sub-problems
+4. **Action Phase**: Determine next steps (decisions, actions, information gathering)
+5. **Wrap Up**: Present structured summary with clear next actions
+6. **Integration**: Offer to create tasks (reminder-keeper) or projects (work-structurer)
+
+### Work Structuring Workflow
+1. **Understand Scope**: Determine if creating Areas, Projects, or Tasks
+2. **Create Areas**: Define broad, ongoing areas of interest with descriptions
+3. **Create Projects**: Specific outcomes within Areas, with clear goals
+4. **Discovery Mode**: Help clarify goals through guided questions when unclear
+5. **Task Breakdown**: Optionally break projects into actionable tasks
+6. **Present Structure**: Show complete hierarchy with visual formatting
+7. **Integration**: Link to reminder-keeper for task dates, problem-externalizer for overwhelm
+
+### Skill Integration Patterns
+
+The skills are designed to work together seamlessly:
+
+**Brain Dump → Note Processing → Other Skills**
+- Capture thoughts with brain-dumper
+- Review with note-processer
+- Convert to tasks (reminder-keeper), projects (work-structurer), or externalize complex issues (problem-externalizer)
+
+**Problem Externalization → Action**
+- Use problem-externalizer to clarify overwhelming situations
+- Create project structure with work-structurer
+- Set up specific tasks with reminder-keeper
+- Save additional insights to brain-dumper
+
+**Work Structuring → Task Creation**
+- Build Areas/Projects with work-structurer
+- Populate with tasks using reminder-keeper
+- Use problem-externalizer when scope feels overwhelming
+
+**Key Principle**: Always offer integration points naturally - "Want me to create a task for that?" or "Should we set this up as a project?" or "This sounds overwhelming - want to externalize it together?"
 
 ## Response Style
 - Keep confirmations brief and natural

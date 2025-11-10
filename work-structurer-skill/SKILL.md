@@ -1,3 +1,8 @@
+---
+name: work-structurer
+description: Structure work into proper Notion hierarchy (Areas → Projects → Tasks). Use when the user says "let's set up my projects", "help me structure this work", "break this project down", or after problem externalization when ready to organize. Creates full hierarchy with goals and helps discover project outcomes through guided questions.
+---
+
 # Work Structurer Skill
 
 ## Purpose

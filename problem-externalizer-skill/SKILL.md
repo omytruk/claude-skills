@@ -1,3 +1,8 @@
+---
+name: problem-externalizer
+description: Help externalize overwhelming problems through structured interview process. Use when the user says "I'm feeling overwhelmed", "help me figure out what to do", "I need to externalize this", or is clearly ruminating. Separates the person from the problem, defines boundaries, breaks down components, and identifies actionable next steps.
+---
+
 # Problem Externalizer Skill
 
 ## Purpose
