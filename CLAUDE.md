@@ -30,7 +30,7 @@ Each skill is self-contained in its own directory with a `SKILL.md` file that de
    - Deferred processing approach
    - Optional context tagging
 
-3. **note-processer** (note-processing-skill/): Review and organize brain dumps
+3. **note-processor** (note-processing-skill/): Review and organize brain dumps
    - Batch or selective note processing
    - Converts notes to tasks or projects
    - Marks processed items
