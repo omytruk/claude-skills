@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-This repository contains custom Claude skills for personal productivity and task management, integrated with Notion databases. These skills are designed for conversational, natural language interactions.
+This repository is evolving into a comprehensive ADHD-friendly AI organization and productivity system. It contains custom Claude skills for task management and thought organization, integrated with Notion databases. The system is designed for conversational, zero-friction interactions that work with ADHD brains rather than against them.
 
 ## Architecture
 
@@ -18,19 +18,19 @@ Each skill is self-contained in its own directory with a `SKILL.md` file that de
 
 ### Three Core Skills
 
-1. **reminder-skill**: Task creation with intelligent date/time parsing
+1. **reminder-keeper** (reminder-skill/): Task creation with intelligent date/time parsing
    - Parses natural language for task creation ("remind me to...")
    - Handles Plan Date vs Due Date logic
    - Links tasks to projects automatically
    - Supports relative time ("in 30 minutes", "tomorrow at 9am")
 
-2. **brain-dump-skill**: Frictionless thought capture
+2. **brain-dumper** (brain-dump-skill/): Frictionless thought capture
    - Zero-structure note capture
    - Minimal confirmation responses
    - Deferred processing approach
    - Optional context tagging
 
-3. **note-processing-skill**: Review and organize brain dumps
+3. **note-processer** (note-processing-skill/): Review and organize brain dumps
    - Batch or selective note processing
    - Converts notes to tasks or projects
    - Marks processed items
@@ -56,6 +56,15 @@ Default fallbacks:
 4. **Smart parsing**: Handle various date/time formats and project references contextually
 5. **Process later, not now**: Brain dump first, organize during dedicated review sessions
 
+### ADHD-Friendly Design
+
+The system is specifically designed to work with ADHD thought patterns:
+- **Capture in the moment**: No structure required when ideas strike
+- **Zero decision fatigue**: Intelligent defaults eliminate choice paralysis
+- **Flexible processing**: Review and organize when ready, not forced
+- **Natural language**: No need to remember syntax or formats
+- **Quick confirmations**: Minimal interruption to flow state
+
 ## Working with Skills
 
 ### Date/Time Parsing Logic
@@ -74,7 +83,7 @@ Default fallbacks:
 1. Query unprocessed notes (Processed = "__NO__")
 2. Present numbered list for easy reference
 3. Support multiple outcomes per note:
-   - Convert to task (use Reminder skill)
+   - Convert to task (use reminder-keeper skill)
    - Convert to project
    - Saved to external system (Obsidian)
    - Mark as done/no longer relevant
