@@ -101,6 +101,6 @@ Give Olena a brief, natural confirmation:
 1. **Be intelligent about project matching** - look for keywords like "exhibition", "ED awareness", "book", "consulting", etc.
 2. **Default to General** when unsure - better than failing or asking for clarification
 3. **Keep confirmations brief and natural** - no need to explain the mechanics
-4. **Parse dates intelligently** - understand "tomorrow", "next week", "Friday", "in 30 minutes", "in 2 hours", etc. based on current date/time (today is 2025-11-10)
+4. **Parse dates intelligently** - understand "tomorrow", "next week", "Friday", "in 30 minutes", "in 2 hours", etc. based on current date/time
 5. **Handle relative time** - calculate exact datetime for "in X minutes/hours" from current time
 6. **Never ask Olena to clarify** the project unless absolutely necessary - make your best guess
