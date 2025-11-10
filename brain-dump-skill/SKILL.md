@@ -1,5 +1,5 @@
 ---
-name: brain-dump
+name: brain-dumper
 description: Capture thoughts, ideas, and notes quickly without structure. Use when the user says "note this", "brain dump", "record this for later", or shares a thought to save. Zero friction capture with minimal confirmation.
 ---
 

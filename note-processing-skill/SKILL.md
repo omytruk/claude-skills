@@ -1,5 +1,5 @@
 ---
-name: note-processing
+name: note-processer
 description: Review and process unprocessed brain dump notes. Use when the user asks to see or process their notes, e.g., "what did I dump on you", "show me my notes", "let's process my brain dump", or "what notes do I need to process". Converts notes to tasks or projects.
 ---
 

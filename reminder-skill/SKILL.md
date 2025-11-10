@@ -1,5 +1,5 @@
 ---
-name: reminder
+name: reminder-keeper
 description: Create task reminders in Notion using natural language. Use when the user says things like "remind me to...", "I need to...", or mentions doing something at a specific time or by a deadline. Handles date/time parsing, project linking, and creates tasks in Notion.
 ---
 
