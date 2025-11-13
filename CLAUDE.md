@@ -56,12 +56,14 @@ Each skill is self-contained in its own directory with a `SKILL.md` file that de
 
 ### Notion Integration
 
-All skills interact with specific Notion databases:
+All skills interact with specific Notion databases using their **data source/collection IDs** (not page/database IDs):
 - **Reminders**: `2a808620-e1b0-80d1-95d9-000bb5b72d0d` (simple, standalone actions)
 - **Tasks**: `2a708620-e1b0-80f9-9306-f1d6d0984dbb` (project-related work with descriptions)
 - **Projects**: `2a708620-e1b0-8038-9898-d5ad146c9cbd`
 - **Areas of Interest**: `2a708620-e1b0-80db-99b4-ec4706808135`
 - **Brain Dump**: `2a708620-e1b0-80be-9b2b-e0540ca13548`
+
+**Important**: When creating pages in Notion databases, always use the data source/collection ID (found in the `<ancestor-path>` or `parent.database_id` fields of existing pages), not the database page ID from the URL. These are different identifiers.
 
 Default fallbacks:
 - General Area: https://www.notion.so/2a708620e1b0811bab8ed2364625ad9e
