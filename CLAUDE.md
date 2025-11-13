@@ -18,11 +18,14 @@ Each skill is self-contained in its own directory with a `SKILL.md` file that de
 
 ### Five Core Skills
 
-1. **reminder-keeper** (reminder-skill/): Task creation with intelligent date/time parsing
-   - Parses natural language for task creation ("remind me to...")
+1. **action-keeper** (action-keeper-skill/): Intelligent reminder and task creation
+   - Automatically routes to Reminders (simple, standalone) or Tasks (project-related, complex)
+   - Parses natural language for both reminders and tasks
+   - Extracts title vs description for tasks
    - Handles Plan Date vs Due Date logic
    - Links tasks to projects automatically
    - Supports relative time ("in 30 minutes", "tomorrow at 9am")
+   - Zero decision fatigue - just say what you need
 
 2. **brain-dumper** (brain-dump-skill/): Frictionless thought capture
    - Zero-structure note capture
@@ -42,7 +45,7 @@ Each skill is self-contained in its own directory with a `SKILL.md` file that de
    - Reduces rumination and overwhelm via 5-phase structure
    - Defines boundaries and actionable components
    - Creates clear next steps from complex situations
-   - Integrates seamlessly with work-structurer and reminder-keeper
+   - Integrates seamlessly with work-structurer and action-keeper
 
 5. **work-structurer** (work-structurer-skill/): Notion hierarchy setup and project structuring
    - Creates proper Areas → Projects → Tasks hierarchy
@@ -54,10 +57,11 @@ Each skill is self-contained in its own directory with a `SKILL.md` file that de
 ### Notion Integration
 
 All skills interact with specific Notion databases:
-- **Tasks**: `collection://2a708620-e1b0-807e-b3eb-000b698751cc`
-- **Projects**: `collection://2a708620-e1b0-8017-9b32-000b5045104a`
-- **Areas of Interest**: `collection://2a708620-e1b0-80bf-b537-000be39d5d7a`
-- **Brain Dump**: `collection://2a708620-e1b0-80cc-bbba-000b6e2fdb7b`
+- **Reminders**: `2a808620-e1b0-8050-9725-cd9c8a75c924` (simple, standalone actions)
+- **Tasks**: `2a708620-e1b0-80f9-9306-f1d6d0984dbb` (project-related work with descriptions)
+- **Projects**: `2a708620-e1b0-8038-9898-d5ad146c9cbd`
+- **Areas of Interest**: `2a708620-e1b0-80db-99b4-ec4706808135`
+- **Brain Dump**: `2a708620-e1b0-80be-9b2b-e0540ca13548`
 
 Default fallbacks:
 - General Area: https://www.notion.so/2a708620e1b0811bab8ed2364625ad9e
@@ -82,23 +86,59 @@ The system is specifically designed to work with ADHD thought patterns:
 
 ## Working with Skills
 
+### Intelligent Routing: Reminders vs Tasks
+
+The action-keeper skill automatically decides whether to create a Reminder or Task based on context:
+
+**Route to REMINDERS when:**
+- Simple, standalone action (e.g., "get groceries", "call mom")
+- Starts with "Remind me to..."
+- No project context or detailed information
+- Just needs to be checked off a list
+
+**Route to TASKS when:**
+- Related to a project or area of work
+- Starts with "I need to..." or "I should..."
+- Has context, details, or is part of a workflow
+- Examples: "call gallery about exhibition", "build new Claude skill"
+
+**Task Structure:**
+- **Title**: Concise action (verb + object)
+- **Description**: Additional context, details, why/how information
+- **Project**: Always linked to a project (or General Project)
+
+**When in doubt:** If there's ANY project context or detail → Task. If standalone → Reminder.
+
 ### Date/Time Parsing Logic
 - **Plan Date** = when user wants to do the task (specific datetime)
 - **Due Date** = deadline for completion (date only or end of period)
 - Understand relative time: "in 30 minutes", "tomorrow", "this week", "by Friday"
 - Current date context is critical for accurate parsing
 
-### Project Matching
-- Search for keywords in user input ("ED awareness", "exhibition", "book")
-- Match against Projects database names
-- Default to General Project if no match or ambiguous
-- Never ask for clarification unless absolutely necessary
+### Intelligent Project Matching (for Tasks)
+
+Use semantic understanding, not just keyword search:
+
+**Process:**
+1. Query Active Projects first (Status = "Active")
+2. Read full context: Name, Goal, and Description fields
+3. Make semantic matches based on what the task is *about*
+4. Consider domain/topic alignment with project goals
+5. Fall back to keyword matching if semantic matching unclear
+6. Default to General Project if no clear match
+
+**Examples:**
+- "Write about imagination and AI" → matches Substack project (Goal mentions "imagination")
+- "Gallery space for eating disorder art" → matches "ED Awareness Art Series"
+- "Research synthography" → matches exhibition project (if Goal mentions synthography)
+
+**Principle:** Never ask for clarification - make intelligent guess and keep flow going
 
 ### Note Processing Workflow
 1. Query unprocessed notes (Processed = "__NO__")
 2. Present numbered list for easy reference
 3. Support multiple outcomes per note:
-   - Convert to task (use reminder-keeper skill)
+   - Convert to task (use action-keeper skill)
    - Convert to project (use work-structurer skill)
    - Saved to external system (Obsidian)
    - Mark as done/no longer relevant
@@ -111,7 +151,7 @@ The system is specifically designed to work with ADHD thought patterns:
 3. **Breakdown Phase**: Identify distinct components and sub-problems
 4. **Action Phase**: Determine next steps (decisions, actions, information gathering)
 5. **Wrap Up**: Present structured summary with clear next actions
-6. **Integration**: Offer to create tasks (reminder-keeper) or projects (work-structurer)
+6. **Integration**: Offer to create tasks (action-keeper) or projects (work-structurer)
 
 ### Work Structuring Workflow
 1. **Understand Scope**: Determine if creating Areas, Projects, or Tasks
@@ -120,7 +160,7 @@ The system is specifically designed to work with ADHD thought patterns:
 4. **Discovery Mode**: Help clarify goals through guided questions when unclear
 5. **Task Breakdown**: Optionally break projects into actionable tasks
 6. **Present Structure**: Show complete hierarchy with visual formatting
-7. **Integration**: Link to reminder-keeper for task dates, problem-externalizer for overwhelm
+7. **Integration**: Link to action-keeper for task dates, problem-externalizer for overwhelm
 
 ### Skill Integration Patterns
 
@@ -128,21 +168,27 @@ The skills are designed to work together seamlessly:
 
 **Brain Dump → Note Processing → Other Skills**
 - Capture thoughts with brain-dumper
-- Review with note-processer
-- Convert to tasks (reminder-keeper), projects (work-structurer), or externalize complex issues (problem-externalizer)
+- Review with note-processor
+- Convert to reminders/tasks (action-keeper - automatically routed), projects (work-structurer), or externalize complex issues (problem-externalizer)
 
 **Problem Externalization → Action**
 - Use problem-externalizer to clarify overwhelming situations
 - Create project structure with work-structurer
-- Set up specific tasks with reminder-keeper
+- Set up specific reminders or tasks with action-keeper (automatically routed)
 - Save additional insights to brain-dumper
 
 **Work Structuring → Task Creation**
 - Build Areas/Projects with work-structurer
-- Populate with tasks using reminder-keeper
+- Populate with tasks using action-keeper (will create Tasks since they have project context)
 - Use problem-externalizer when scope feels overwhelming
 
-**Key Principle**: Always offer integration points naturally - "Want me to create a task for that?" or "Should we set this up as a project?" or "This sounds overwhelming - want to externalize it together?"
+**Action-Keeper Intelligence**
+- Automatically routes to Reminders or Tasks - no decision needed
+- Extracts title vs description for richer task context
+- Links tasks to projects while keeping reminders standalone
+- Handles all date/time parsing for both types
+
+**Key Principle**: Always offer integration points naturally - "Want me to create a reminder for that?" or "Should we set this up as a project?" or "This sounds overwhelming - want to externalize it together?"
 
 ## Response Style
 - Keep confirmations brief and natural

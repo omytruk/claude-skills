@@ -1,9 +1,9 @@
 ---
-name: reminder-keeper
+name: action-keeper
 description: Intelligently create reminders or tasks in Notion using natural language. Use when the user says things like "remind me to...", "I need to...", or mentions doing something at a specific time or by a deadline. Automatically routes to Reminders (simple, standalone) or Tasks (project-related, complex) based on context. Handles date/time parsing, project linking, and description capture.
 ---
 
-# Reminder Keeper Skill
+# Action Keeper Skill
 
 ## Purpose
 Enable Olena to capture reminders and tasks using natural, conversational language. Intelligently routes to the appropriate database (Reminders vs Tasks) based on context, without requiring her to decide which to use.
@@ -95,14 +95,14 @@ Instead of simple keyword search, use intelligent semantic matching:
 
 **3. Make Semantic Matches**
 Examples of intelligent matching:
-- Task: "Build skill to automatically store synthography ideas"
-  → Matches "Build Personal AI Infrastructure" (Goal: "Create working ADHD-friendly AI system that I use daily for work and life")
+- Task: "Write about imagination in the AI age"
+  → Matches "Establish Thought Leadership via Substack" (Goal: "Establish voice at intersection of imagination and ADHD")
 
 - Task: "Find gallery space for eating disorder art"
   → Matches "ED Awareness Art Series" even if "ED" isn't in the task text
 
-- Task: "Research Lewis Carroll's childhood to identify his potential for creativity"
-  → Matches "Book on Human Imagination" (word "research" suggests that it is related to book writing even if the task says creativity instead of imagination)
+- Task: "Research synthography techniques"
+  → Matches "Houston General Exhibition" (if Goal mentions showcasing synthography work)
 
 **4. Consider Task Context**
 - What is the task trying to achieve?

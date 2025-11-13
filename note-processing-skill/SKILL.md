@@ -9,10 +9,11 @@ description: Review and process unprocessed brain dump notes. Use when the user 
 Help Olena review and process her unprocessed brain dump notes whenever she's ready - daily, weekly, or whenever she feels like it. Turn raw thoughts into actionable items, project ideas, or organized knowledge.
 
 ## Database IDs
-- **Brain Dump**: collection://2a708620-e1b0-80cc-bbba-000b6e2fdb7b
-- **Projects**: collection://2a708620-e1b0-8017-9b32-000b5045104a
-- **Tasks**: collection://2a708620-e1b0-807e-b3eb-000b698751cc
-- **Areas of Interest**: collection://2a708620-e1b0-80bf-b537-000be39d5d7a
+- **Brain Dump**: collection://2a708620-e1b0-80be-9b2b-e0540ca13548
+- **Projects**: collection://2a708620-e1b0-8038-9898-d5ad146c9cbd
+- **Tasks**: collection://2a708620-e1b0-80f9-9306-f1d6d0984dbb
+- **Reminders**: collection://2a808620-e1b0-8050-9725-cd9c8a75c924
+- **Areas of Interest**: collection://2a708620-e1b0-80db-99b4-ec4706808135
 
 ## How It Works
 
@@ -51,8 +52,10 @@ Keep it simple and numbered for easy reference.
 ### Step 3: Help Process Each Note
 As Olena works through the notes, she might:
 
-**A) Turn it into a task**
-- Use the Reminder Skill to create a task
+**A) Turn it into a reminder or task**
+- Use the Action Keeper Skill (it will intelligently route to Reminders or Tasks DB)
+- Simple standalone actions → Reminder
+- Project-related or complex actions → Task with description
 - Mark the note as Processed
 - Example: "Let's make #3 a task to do by Friday"
 
@@ -156,4 +159,4 @@ Want to process these?"
 4. **Don't force processing** - if she's not ready, that's fine
 5. **Track completion** - update Processed status immediately when done
 6. **Keep it conversational** - this isn't a chore, it's organizing thoughts
-7. **Integrate with other skills** - use Problem Externalizer for overwhelming notes, Work Structurer for complex projects, Reminder Skill for tasks
+7. **Integrate with other skills** - use Problem Externalizer for overwhelming notes, Work Structurer for complex projects, Action Keeper Skill for tasks

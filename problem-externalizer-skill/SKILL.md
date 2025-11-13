@@ -86,7 +86,7 @@ Start with empathy and acknowledgment:
 **Claude's Role**:
 - Focus on next steps, not final solutions
 - Help distinguish between: decisions, actions, information gathering, waiting
-- Offer to turn any actions into tasks (using Reminder Skill)
+- Offer to turn any actions into tasks (using Action Keeper Skill)
 - Acknowledge what doesn't need action right now
 
 ### Phase 5: Wrap Up (Externalization complete)
@@ -132,7 +132,7 @@ She might only need certain phases:
 
 ### Integration with Other Skills
 After externalization:
-- Offer to create tasks (Reminder Skill)
+- Offer to create tasks (Action Keeper Skill)
 - Offer to set up project structure (Work Structurer Skill)
 - Offer to save summary to Brain Dump for later processing
 

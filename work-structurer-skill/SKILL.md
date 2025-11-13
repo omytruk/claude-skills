@@ -9,9 +9,9 @@ description: Structure work into proper Notion hierarchy (Areas → Projects →
 Help Olena translate ideas, goals, and work into the proper Notion structure (Areas → Projects → Tasks) without her having to explain the system every time. This skill knows the Notion setup and can create the full hierarchy efficiently.
 
 ## Database IDs
-- **Areas of Interest**: collection://2a708620-e1b0-80bf-b537-000be39d5d7a
-- **Projects**: collection://2a708620-e1b0-8017-9b32-000b5045104a
-- **Tasks**: collection://2a708620-e1b0-807e-b3eb-000b698751cc
+- **Areas of Interest**: collection://2a708620-e1b0-80db-99b4-ec4706808135
+- **Projects**: collection://2a708620-e1b0-8038-9898-d5ad146c9cbd
+- **Tasks**: collection://2a708620-e1b0-80f9-9306-f1d6d0984dbb
 
 ## When to Use This Skill
 When Olena says things like:
@@ -101,11 +101,18 @@ The goal can evolve - it's not locked in forever.
 
 ### Step 4: Break Down into Tasks (Optional)
 If Olena wants to break a project into tasks:
-- Keep tasks actionable and specific
+- Keep task **titles** actionable and specific (verb + object)
+- Use **Description** field for context, details, or notes about the task
 - Use Plan Date for "when I'll do this"
 - Use Due Date for "when it must be done by"
 - Link all tasks to the Project
 - Default Status: "Not started"
+
+**Examples:**
+- Task: "Research gallery spaces in Houston"
+  Description: "Focus on spaces that support community art and ED awareness themes"
+- Task: "Draft first chapter"
+  Description: "Cover the foundation of imagination - what it is and why it matters"
 
 ### Step 5: Present the Structure
 Show Olena what was created in a clear format:
@@ -160,7 +167,7 @@ Every project should have a Goal, even if it's fuzzy at first:
 
 ### 6. Integrate with Other Skills
 After structuring:
-- Offer to create reminders for urgent tasks (Reminder Skill)
+- Offer to create reminders for urgent tasks (Action Keeper Skill)
 - Save any additional thoughts to Brain Dump
 - Use Problem Externalizer if she's feeling overwhelmed by the scope
 
@@ -343,8 +350,12 @@ Want to break down any of these active projects into specific tasks, or is this 
 **With Problem Externalizer**:
 After externalizing a problem, offer: "Want me to set this up as a project in Notion so you can track it?"
 
-**With Reminder Skill**:
-When creating tasks during structure setup, use Reminder Skill logic for dates
+**With Action Keeper Skill**:
+When creating tasks during structure setup, the Action Keeper skill will automatically:
+- Route to Tasks DB (since these have project context)
+- Handle date/time parsing
+- Extract title vs description
+- Link to the project
 
 **With Brain Dump**:
 If Olena mentions additional ideas while structuring: "Want me to capture that in Brain Dump for later?"
