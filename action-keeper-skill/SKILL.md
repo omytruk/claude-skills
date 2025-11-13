@@ -9,7 +9,7 @@ description: Intelligently create reminders or tasks in Notion using natural lan
 Enable Olena to capture reminders and tasks using natural, conversational language. Intelligently routes to the appropriate database (Reminders vs Tasks) based on context, without requiring her to decide which to use.
 
 ## Database IDs
-- **Reminders**: collection://2a808620-e1b0-8050-9725-cd9c8a75c924
+- **Reminders**: collection://2a808620-e1b0-80d1-95d9-000bb5b72d0d
 - **Tasks**: collection://2a708620-e1b0-80f9-9306-f1d6d0984dbb
 - **Projects**: collection://2a708620-e1b0-8038-9898-d5ad146c9cbd
 - **Areas of Interest**: collection://2a708620-e1b0-80db-99b4-ec4706808135

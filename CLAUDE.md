@@ -57,7 +57,7 @@ Each skill is self-contained in its own directory with a `SKILL.md` file that de
 ### Notion Integration
 
 All skills interact with specific Notion databases:
-- **Reminders**: `2a808620-e1b0-8050-9725-cd9c8a75c924` (simple, standalone actions)
+- **Reminders**: `2a808620-e1b0-80d1-95d9-000bb5b72d0d` (simple, standalone actions)
 - **Tasks**: `2a708620-e1b0-80f9-9306-f1d6d0984dbb` (project-related work with descriptions)
 - **Projects**: `2a708620-e1b0-8038-9898-d5ad146c9cbd`
 - **Areas of Interest**: `2a708620-e1b0-80db-99b4-ec4706808135`

@@ -12,7 +12,7 @@ Help Olena review and process her unprocessed brain dump notes whenever she's re
 - **Brain Dump**: collection://2a708620-e1b0-80be-9b2b-e0540ca13548
 - **Projects**: collection://2a708620-e1b0-8038-9898-d5ad146c9cbd
 - **Tasks**: collection://2a708620-e1b0-80f9-9306-f1d6d0984dbb
-- **Reminders**: collection://2a808620-e1b0-8050-9725-cd9c8a75c924
+- **Reminders**: collection://2a808620-e1b0-80d1-95d9-000bb5b72d0d
 - **Areas of Interest**: collection://2a708620-e1b0-80db-99b4-ec4706808135
 
 ## How It Works
