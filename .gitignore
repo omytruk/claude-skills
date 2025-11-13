@@ -31,3 +31,6 @@ Temporary Items
 
 # Compressed files (skill packages for upload)
 *.zip
+
+# MCP configuration with secrets
+.mcp.json
